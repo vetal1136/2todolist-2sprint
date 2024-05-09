@@ -122,7 +122,7 @@ function App() {
         palette: {
             mode: themeMode==='light' ? 'light' : 'dark',
             primary: {
-                main: '#4aee08',
+                main: '#47aef3',
                 contrastText: 'white',
             },
             secondary: {
