@@ -1,14 +1,10 @@
 import {ChangeEvent, KeyboardEvent, useState} from "react";
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import AddBoxIcon from '@mui/icons-material/AddBox'
-import IconButton from '@mui/material/IconButton'
-import Box from "@mui/material/Box";
-import {filterButtonsContainerSx} from "./Todolist.styles";
-
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import IconButton from "@mui/material/IconButton";
 
 type PropsType = {
-	addItem: (title:string) => void
+	addItem: (title: string) => void
 }
 
 export const AddItemForm = ({addItem}: PropsType) => {
@@ -35,49 +31,22 @@ export const AddItemForm = ({addItem}: PropsType) => {
 			addItemHandler()
 		}
 	}
-
-	const buttonStyles={
-		maxWidth: '30px',
-		maxHeight: '30px',
-		minWidth: '30px',
-		minHeight: '30px',
-		background:'red'
-	}
-
-
 	return (
-		<Box sx={filterButtonsContainerSx}>
-			{/*<input*/}
-			{/*	className={error ? 'error' : ''}*/}
-			{/*	value={title}*/}
-			{/*	onChange={changeItemHandler}*/}
-			{/*	onKeyUp={addItemOnKeyUpHandler}*/}
-			{/*/>*/}
-
+		<div>
 			<TextField
-				id="outlined-basic"
 				label="Enter a title"
-				variant="outlined"
+				variant={'outlined'}
 				value={title}
-				onChange={changeItemHandler}
-				onKeyUp={addItemOnKeyUpHandler}
-				size='small'
+				size={'small'}
 				error={!!error}
 				helperText={error}
+				onChange={changeItemHandler}
+				onKeyUp={addItemOnKeyUpHandler}
 			/>
 			<IconButton onClick={addItemHandler} color={'primary'}>
-				<AddBoxIcon />
+				<AddBoxIcon/>
 			</IconButton>
-
-			{/*<Button*/}
-			{/*	variant="contained"*/}
-			{/*	onClick={addItemHandler}*/}
-			{/*	//size='small'*/}
-			{/*	// style={buttonStyles}*/}
-			{/*>+</Button>*/}
-			{/*<Button title={'+'} onClick={addItemHandler}/>*/}
-			{/*{error && <div className={'error-message'}>{error}</div>}*/}
-		</Box>
+		</div>
 	)
 }
 
